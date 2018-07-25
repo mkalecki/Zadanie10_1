@@ -19,17 +19,17 @@ public class Person {
                 System.out.println("podaj imię:");
         String firstName = scan.nextLine();
         if (firstName.length() < 2 || firstName==null)
-            throw new NameUndefinedException("musisz podać conajmniej dwa znaki");
+            throw new NameUndefinedException("musisz podać conajmniej dwa znaki imienia");
         System.out.println("podaj nazwisko");
         String lastName = scan.nextLine();
         if (lastName.length() < 2 || lastName==null)
-            throw new NameUndefinedException("musisz podać conajmniej dwa znaki");
+            throw new NameUndefinedException("musisz podać conajmniej dwa znaki nazwiska");
         System.out.println("podaj PESEL:");
         String pesel = scan.nextLine();
         System.out.println("podaj wiek:");
         int age = scan.nextInt();
         if (age<1)
-            throw new NameUndefinedException("wiek nie może być mniejszy od 1");
+            throw new IncorrectAgeException("wiek nie może być mniejszy od 1");
         this.setFirstName(firstName);
         this.setLastName(lastName);
         this.setPesel(pesel);
