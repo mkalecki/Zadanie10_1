@@ -6,11 +6,11 @@ public class Test {
     public static void main(String[] args) {
 
 
-        Person person = new Person();
+        Person person = null;
 
         try {
-            person.add();
-        } catch (NameUndefinedException e){
+            person = new Person();
+        } catch (NameUndefinedException e) {
             System.err.println(e.getMessage());
         } catch (IncorrectAgeException ex) {
             System.err.println(ex.getMessage());
@@ -19,8 +19,6 @@ public class Test {
             System.err.println("Nieprawidłowe dane");
 
         }
-
-
 
         System.out.println(person.toString());
 

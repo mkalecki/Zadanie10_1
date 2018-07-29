@@ -6,29 +6,21 @@ public class Person {
     private String pesel;
     private int age;
 
-//    public Person (String firstName, String lastName, String pesel, int age) {
-//        this.firstName = firstName;
-//        this.lastName = lastName;
-//        this.pesel = pesel;
-//        this.age = age;
-//    }
-
-    public void add () throws IncorrectAgeException,NameUndefinedException{
+    public Person() throws IncorrectAgeException, NameUndefinedException {
         Scanner scan = new Scanner(System.in);
-//        Person person = null;
-                System.out.println("podaj imię:");
+        System.out.println("podaj imię:");
         String firstName = scan.nextLine();
-        if (firstName.length() < 2 || firstName==null)
+        if (firstName.length() < 2)
             throw new NameUndefinedException("musisz podać conajmniej dwa znaki imienia");
         System.out.println("podaj nazwisko");
         String lastName = scan.nextLine();
-        if (lastName.length() < 2 || lastName==null)
+        if (lastName.length() < 2)
             throw new NameUndefinedException("musisz podać conajmniej dwa znaki nazwiska");
         System.out.println("podaj PESEL:");
         String pesel = scan.nextLine();
         System.out.println("podaj wiek:");
         int age = scan.nextInt();
-        if (age<1)
+        if (age < 1)
             throw new IncorrectAgeException("wiek nie może być mniejszy od 1");
         this.setFirstName(firstName);
         this.setLastName(lastName);
@@ -72,7 +64,7 @@ public class Person {
 
     @Override
     public String toString() {
-        return  firstName + " " + lastName + ", PESEL:" +
+        return firstName + " " + lastName + ", PESEL:" +
                 pesel + ", WIEK: " +
                 age;
     }
